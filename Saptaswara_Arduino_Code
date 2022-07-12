@@ -1,0 +1,175 @@
+#include<Servo.h>
+Servo tap,slide;
+
+void setup() {
+  Serial.begin(9600);
+
+  tap.attach(9);
+
+  tap.write(0);
+
+  slide.attach(10);
+
+  slide.write(0);
+
+  delay(2000);
+
+}
+
+
+void playwhite(int wslidePos)
+{
+  slide.write(wslidePos);
+  delay(350);
+
+  tap.write(0);
+  delay(200);
+
+  tap.write(12);
+  delay(400);
+  
+  tap.write(0);
+  delay(200);
+}
+
+void playblack(int bslidePos)
+{
+  slide.write(bslidePos);
+  delay(800);
+
+  tap.write(0);
+  delay(200);
+
+  tap.write(10);
+  delay(300);
+  
+  tap.write(0);
+  delay(200);
+}
+void loop() 
+{
+  char data;
+  data=Serial.read();
+  if(data=='1')
+ {
+ playwhite(58);
+ playwhite(40);
+ playwhite(27);
+ playwhite(43);
+ delay(500);
+ playwhite(58);
+ playwhite(40);
+ playwhite(32);
+ playwhite(48);
+ delay(500);
+ playwhite(58);
+ playwhite(40);
+ playwhite(27);
+ delay(300);
+ playwhite(42);
+ playwhite(48);
+ playwhite(32);
+
+ slide.write(0);
+ 
+}
+
+if(data=='2')
+
+{
+ playwhite(38);
+ delay(800);
+ playwhite(44);
+ playwhite(34);
+ delay(200);
+ playwhite(44);
+ playwhite(34);
+ delay(200);
+ playwhite(44);
+ playwhite(34);
+ playwhite(23);
+ playwhite(34);
+ playwhite(38);
+ playwhite(43);
+ delay(300);
+
+ playwhite(49);
+ playwhite(40);
+ delay(100);
+ playwhite(49);
+ playwhite(40);
+ delay(600);
+ 
+ playwhite(54);
+ playwhite(45);
+ playwhite(35);
+ playwhite(47);
+ delay(300);
+ 
+ playwhite(58);
+ playwhite(49);
+ playwhite(43);
+ playwhite(53);
+ delay(300);
+
+ playwhite(54);
+ playwhite(45);
+ playwhite(35);
+ playwhite(48);
+ delay(300);
+
+ playwhite(53);
+ playwhite(59);
+ playwhite(38);
+ delay(300);
+ playwhite(49);
+ playwhite(55);
+ delay(300);
+
+  slide.write(0);
+}
+
+if(data=='3')
+{
+  
+ playwhite(52);
+ playwhite(36);
+ playwhite(31);
+ playwhite(52);
+ 
+ playwhite(26);
+ playwhite(36);
+ playwhite(41);
+ playwhite(30);
+
+ playwhite(52);
+ playwhite(36);
+ playwhite(31);
+ playwhite(52);
+ 
+ playwhite(26);
+ playwhite(36);
+ playwhite(41);
+ playwhite(30);
+ 
+ playwhite(26);
+ playwhite(22);
+ playwhite(16);
+ playwhite(32);
+
+ playwhite(9);
+ playwhite(24);
+ playwhite(28);
+ playwhite(32);
+ playwhite(36);
+ playwhite(26);
+
+ playwhite(22);
+ playwhite(16);
+ playwhite(28);
+ playwhite(32);
+ playwhite(36);
+ playwhite(41);
+ slide.write(0);
+}
+}
