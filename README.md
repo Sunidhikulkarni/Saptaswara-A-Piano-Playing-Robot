@@ -15,5 +15,9 @@ in
 an easy
 and
 economical way.
-[image](https://user-images.githubusercontent.com/47131180/197350870-bdd9df06-8df7-4859-b6cc-09c7fe80c121.png)
+![image](https://user-images.githubusercontent.com/47131180/197350930-b7cec716-1e6a-4f59-af94-b5eb920c62ff.png)
+- Arduino IDE
+- C++ 
+- Servo motors
+
 
